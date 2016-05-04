@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<style>
+			.row {
+				height: 64px;
+				clear: both;
+			}
+
+			.box {
+				width: 48px;
+				height: 48px;
+				float: left;
+				display: inline;
+				border: solid rgb(0,0,50) 1px;
+				margin: 8px;
+			}
+
+			.box img {
+				width: 32px;
+				height: 32px;
+				padding: 8px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		{{#svgfiles}}
+		<div class='row'>
+			<div class='box' style="background-color: rgb(100,100,100);"> <img src='../{{file}}' /> </div>
+			<div class='box' style="background-color: white;"> <img src='../{{file}}' /> </div>
+			<div class='box' style="background-color: black;"> <img src='../{{file}}' /> </div>
+			<div class='box' style="background-color: rgb(180,180,180);"> <img src='../{{file}}' /> </div>
+			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 4px 4px;" /><br/></div>
+			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 6px 6px;" /><br/></div>
+			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 12px 12px;" /><br/></div>
+		</div>
+		{{/svgfiles}}
+	</body>
+</html>

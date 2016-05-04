@@ -1,0 +1,18 @@
+{
+  "name": "tls-svg-widgets",
+  "version": "1.0.0",
+  "description": "Widgets for SVG with grunt to make multiple files with different colors.",
+  "main": " ",
+  "dependencies": {},
+  "devDependencies": {
+    "async": "^2.0.0-rc.3",
+    "grunt": "^0.4.5",
+    "grunt-execute": "^0.2.2",
+    "handlebars": "^4.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thomas Simpson",
+  "license": "ISC"
+}
