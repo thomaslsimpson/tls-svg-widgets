@@ -1,6 +1,11 @@
 <html>
 	<head>
 		<style>
+			body {
+				font-family: Verdana;
+				font-size: 8pt;
+			}
+
 			.row {
 				height: 64px;
 				clear: both;
@@ -27,6 +32,7 @@
 	<body>
 		{{#svgfiles}}
 		<div class='row'>
+			<div class='box' style="background-color: rgb(200,200,200);">{{widget}}</div>
 			<div class='box' style="background-color: rgb(100,100,100);"> <img src='../{{file}}' /> </div>
 			<div class='box' style="background-color: white;"> <img src='../{{file}}' /> </div>
 			<div class='box' style="background-color: black;"> <img src='../{{file}}' /> </div>
@@ -34,6 +40,8 @@
 			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 4px 4px;" /><br/></div>
 			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 6px 6px;" /><br/></div>
 			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 12px 12px;" /><br/></div>
+			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 16px 16px;" /><br/></div>
+			<div class='box' style="background: rgb(100,100,100) url(../{{file}}); background-size: 24px 24px;" /><br/></div>
 		</div>
 		{{/svgfiles}}
 	</body>

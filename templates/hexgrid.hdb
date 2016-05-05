@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1">
+	<g transform="translate(-0.0,0.0)">
+		<g transform="scale(0.915,0.8)">
+			<polygon points="0.723,0.314 0.543,0.625769145 0.183,0.625769145 0.003,0.314 0.183,0.002230855 0.543,0.002230855 0.723,0.314" style="fill:transparent; stroke:{{color}}; stroke-width:0.025" />
+			<polygon transform="translate(0.0,0.625769145)" points="0.723,0.314 0.543,0.625769145 0.183,0.625769145 0.003,0.314 0.183,0.002230855 0.543,0.002230855 0.723,0.314" style="fill:transparent; stroke:{{color}}; stroke-width:0.025" />
+			<polygon transform="translate(0.543,0.314)" points="0.723,0.314 0.543,0.625769145 0.183,0.625769145 0.003,0.314 0.183,0.002230855 0.543,0.002230855 0.723,0.314" style="fill:transparent; stroke:{{color}}; stroke-width:0.025" />
+		</g>
+	</g>
+</svg>
+

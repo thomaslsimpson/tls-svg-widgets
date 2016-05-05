@@ -1,5 +1,5 @@
 //
-//
+// Require some modules we will need.
 //
 var Handlebars= require('handlebars');
 var fs= require('fs');
@@ -7,8 +7,9 @@ var path= require('path');
 var async= require('async');
 
 
+// ------------------------------------------------------------------------
 //
-//
+// Some of our settings.
 //
 var TEMPLATE_PATH_PREFIX= "templates/";
 
@@ -23,6 +24,7 @@ var OUTPUT_PATH_TEMPLATE= Handlebars.compile("svg/{{widget}}-{{color}}.svg");
 var OUTPUT_LIST= { svgfiles: [] };
 
 
+// ------------------------------------------------------------------------
 
 function processTemplate(templatePath, processTemplateCallback){
 	fs.readFile(templatePath, 'utf8', function(err,data){
@@ -34,7 +36,7 @@ function processTemplate(templatePath, processTemplateCallback){
 				fs.writeFile(task.outputFilePath, task.outputText, function(err){
 					if(err){
 					} else {
-						OUTPUT_LIST.svgfiles.push({file:task.outputFilePath});
+						OUTPUT_LIST.svgfiles.push({file:task.outputFilePath,widget:task.widget});
 					}
 					callback(err);
 				});
@@ -48,6 +50,7 @@ function processTemplate(templatePath, processTemplateCallback){
 				var outputFilePath= OUTPUT_PATH_TEMPLATE({ color:colorname, widget:templateBasename });
 				var outputText= template({color:colorvalue});
 				colorq.push({
+					widget:templateBasename,
 					outputFilePath: outputFilePath,
 					outputText: outputText
 				});
@@ -58,7 +61,7 @@ function processTemplate(templatePath, processTemplateCallback){
 
 
 //
-//
+// Set up an async queue to fill full of template info to process.
 //
 var mainq= async.queue(function(task, callback){
 	processTemplate(task.filepath, callback);
@@ -87,6 +90,7 @@ fs.readdir(TEMPLATE_PATH_PREFIX, function(err, files){
 		console.log("Error finding templates", err);
 		callback(err);
 	} else {
+		files= files.filter(function(e){ return e.substr(-4) == '.hdb' });
 		files.forEach(function(file){
 			console.log(">> Adding: " + file);
 			mainq.push({ 

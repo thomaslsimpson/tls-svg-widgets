@@ -21,3 +21,8 @@ Look in `build.js` and you will see a list of colors with names using in the out
 values to use in the fiels that are created. I would not use spaces and generally be careful with the filename
 parts as I hve not really tested that all that much.
 
+
+More Templates
+==============
+If you want to make more shapes, just put a new ".hdb" file in the templates directory and run grunt.
+
